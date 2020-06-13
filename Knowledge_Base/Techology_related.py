@@ -6,7 +6,7 @@ class Technology_Related(KnowledgeEngine):
 
     @DefFacts()
     def initial_fact(self):
-        print("Now STEM ES directs you to " + "\033[1m" + "Technology related" + "\033[0m"
+        print("\nNow STEM ES directs you to " + "\033[1m" + "Technology related" + "\033[0m"
               + " session. \nPlease answer 'yes' or 'no' based on the questions given.\n")
         yield Fact(action1='Some silly info related to Technology field')
         yield Fact(f6='Must be innovative.')

@@ -1,19 +1,17 @@
 from Knowledge_Base import Common_question, Science_related, Techology_related, Engineering_related, Math_related
 
-engine1 = None
-engine2 = None
-engine3 = None
-
 def choose_2_branches(ls):
     # select 2 branch with higher weightage
-    dict_max2 = {ls[0]: 'Science', ls[1]: 'Technology',
-                 ls[2]: 'Engineering', ls[3]: 'Mathematics'}
+    ls_stem = ['Science', 'Technology', 'Engineering', 'Mathematics']
     br1 = max(ls)
-    branch1 = dict_max2[br1]
+    index_br1 = ls.index(br1)
+    branch1 = ls_stem[index_br1]
     ls.remove(br1)
-    print("after remove highest: ", ls)
+    ls_stem.remove(str(branch1))
+
     br2 = max(ls)
-    branch2 = dict_max2[br2]
+    branch2 = ls_stem[ls.index(br2)]
+
     print(branch1, branch2)
     return branch1, branch2
 
