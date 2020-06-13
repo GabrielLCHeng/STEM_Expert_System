@@ -1,5 +1,4 @@
-from Knowledge_Base import Common_question
-from experta import KnowledgeEngine
+from Knowledge_Base import Common_question, Math_related, Engineering_related, Technology_related, Science_related
 
 engine2, engine3 = None, None
 
@@ -16,43 +15,42 @@ def choose_2_branches(stem_collection):
     br2 = max(stem_collection)
     branch2 = ls_stem[stem_collection.index(br2)]
 
-    print(branch1, branch2)
+    # print(branch1, branch2)
+    return branch1, branch2
     # redirect_to_branch(branch1, branch2)
 
 
-# def redirect_to_branch(branch_1, branch_2):
-#     global engine2, engine3
-#     if branch_1 == 'Science':
-#         # redirect to class Science_related
-#         # ls[0] = Science_related.Science_Related()
-#         engine2 = Science_related.Science_Related()
-#     elif branch_1 == 'Technology':
-#         # redirect to class Technology_related
-#         # ls[0] = Technology_related.Technology_Related()
-#         engine2 = Technology_related.Technology_Related()
-#     elif branch_1 == 'Engineering':
-#         # redirect to class Engineering_related
-#         # ls[0] = Engineering_related.Engineering_Related()
-#         engine2 = Engineering_related.Engineering_Related()
-#     else:
-#         # redirect to class Mathematics_related
-#         # ls[0] = Math_related.Mathematics_Related
-#         engine2 = Math_related.Mathematics_Related()
-#
-#     if branch_2 == 'Science':
-#         # redirect to class Science_related
-#         engine3 = Science_related.Science_Related()
-#     elif branch_2 == 'Technology':
-#         # redirect to class Technology_related
-#         engine3 = Technology_related.Technology_Related()
-#     elif branch_2 == 'Engineering':
-#         # redirect to class Engineering_related
-#         engine3 = Engineering_related.Engineering_Related()
-#     else:
-#         # redirect to class Mathematics_related
-#         engine3 = Math_related.Mathematics_Related()
-#
-#     return branch_1, branch_2
+def redirect_to_branch(branch_1, branch_2):
+    global engine2, engine3
+    if branch_1 == 'Science':
+        # redirect to class Science_related
+        # ls[0] = Science_related.Science_Related()
+        engine2 = Knowledge_Base.Science_related.Science_Related()
+    elif branch_1 == 'Technology':
+        # redirect to class Technology_related
+        # ls[0] = Technology_related.Technology_Related()
+        engine2 = Knowledge_Base.Technology_related.Technology_Related()
+    elif branch_1 == 'Engineering':
+        # redirect to class Engineering_related
+        # ls[0] = Engineering_related.Engineering_Related()
+        engine2 = Knowledge_Base.Engineering_related.Engineering_Related()
+    else:
+        # redirect to class Mathematics_related
+        # ls[0] = Math_related.Mathematics_Related
+        engine2 = Knowledge_Base.Math_related.Mathematics_Related()
+
+    if branch_2 == 'Science':
+        # redirect to class Science_related
+        engine3 = Knowledge_Base.Science_related.Science_Related()
+    elif branch_2 == 'Technology':
+        # redirect to class Technology_related
+        engine3 = Knowledge_Base.Technology_related.Technology_Related()
+    elif branch_2 == 'Engineering':
+        # redirect to class Engineering_related
+        engine3 = Knowledge_Base.Engineering_related.Engineering_Related()
+    else:
+        # redirect to class Mathematics_related
+        engine3 = Knowledge_Base.Math_related.Mathematics_Related()
 
 
 # ----------run---------
@@ -62,10 +60,10 @@ user_name = input("What is your name?\n")
 engine1 = Common_question.Common_Criteria()
 engine1.reset()
 engine1.run()
-# from Knowledge_Base import Science_related, Technology_related, Engineering_related, Math_related
-choose_2_branches(engine1.collection())
+b1, b2 = choose_2_branches(engine1.collection())
 
-# engine2, engine3 = redirect_to_branch(engine1.collection())
+import Knowledge_Base
+redirect_to_branch(b1, b2)
 
 # engine2.reset()
 # engine2.run()
