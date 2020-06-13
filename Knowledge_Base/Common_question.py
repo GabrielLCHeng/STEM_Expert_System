@@ -9,7 +9,7 @@ class Common_Criteria(KnowledgeEngine):
 
     @DefFacts()
     def _initial_action(self):
-        print("Here are some common question to determine "
+        print("\nHere are some common question to determine "
               "which two branches among STEM will you be "
               "tested later. Please answer '1' or '2' based "
               "on the question given.")
