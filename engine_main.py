@@ -1,4 +1,7 @@
-from Knowledge_Base import Common_question, Science_related, Techology_related, Engineering_related, Math_related
+from Knowledge_Base import Common_question
+from experta import KnowledgeEngine
+engine2 = KnowledgeEngine()
+engine3 = KnowledgeEngine()
 
 def choose_2_branches(ls):
     # select 2 branch with higher weightage
@@ -61,8 +64,7 @@ engine1 = Common_question.Common_Criteria()
 engine1.reset()
 engine1.run()
 
-# b1, b2 = choose_2_branches(engine1.collection())
-
+from Knowledge_Base import Science_related, Techology_related, Engineering_related, Math_related
 # engine2, engine3 = redirect_to_branch(engine1.collection())
 redirect_to_branch(engine1.collection())
 engine2.reset()
