@@ -150,3 +150,10 @@ class Common_Criteria(KnowledgeEngine):
 
     def collection(self):
         return [self.weight_sci, self.weight_tech, self.weight_eng, self.weight_math]
+
+
+# t1 = Common_Criteria()
+# t1.reset()
+# t1.run()
+# ls = t1.collection()
+# print(ls)

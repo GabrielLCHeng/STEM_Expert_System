@@ -89,7 +89,7 @@ class Mathematics_Related(KnowledgeEngine):
         # 可以不要写you get 多少mark
 
 
-t1 = Mathematics_Related()
-t1.reset()
-t1.run()
-t1.show_mathematics_mark()
+# t1 = Mathematics_Related()
+# t1.reset()
+# t1.run()
+# t1.show_mathematics_mark()

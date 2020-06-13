@@ -6,6 +6,7 @@ def choose_2_branches(stem_collection):
     # select 2 branch with higher weightage
     print(stem_collection)
     ls_stem = ['Science', 'Technology', 'Engineering', 'Mathematics']
+
     br1 = max(stem_collection)
     index_br1 = stem_collection.index(br1)
     branch1 = ls_stem[index_br1]
@@ -13,9 +14,12 @@ def choose_2_branches(stem_collection):
     ls_stem.remove(str(branch1))
 
     br2 = max(stem_collection)
-    branch2 = ls_stem[stem_collection.index(br2)]
+    index_br2 = stem_collection.index(br2)
+    branch2 = ls_stem[index_br2]
+    stem_collection.remove(br2)
+    ls_stem.remove(str(branch2))
 
-    # print(branch1, branch2)
+    # in case 3rd element are the same value as
     return branch1, branch2
     # redirect_to_branch(branch1, branch2)
 
@@ -25,32 +29,32 @@ def redirect_to_branch(branch_1, branch_2):
     if branch_1 == 'Science':
         # redirect to class Science_related
         # ls[0] = Science_related.Science_Related()
-        engine2 = Knowledge_Base.Science_related.Science_Related()
+        engine2 = Science_related.Science_Related()
     elif branch_1 == 'Technology':
         # redirect to class Technology_related
         # ls[0] = Technology_related.Technology_Related()
-        engine2 = Knowledge_Base.Technology_related.Technology_Related()
+        engine2 = Technology_related.Technology_Related()
     elif branch_1 == 'Engineering':
         # redirect to class Engineering_related
         # ls[0] = Engineering_related.Engineering_Related()
-        engine2 = Knowledge_Base.Engineering_related.Engineering_Related()
+        engine2 = Engineering_related.Engineering_Related()
     else:
         # redirect to class Mathematics_related
         # ls[0] = Math_related.Mathematics_Related
-        engine2 = Knowledge_Base.Math_related.Mathematics_Related()
+        engine2 = Math_related.Mathematics_Related()
 
     if branch_2 == 'Science':
         # redirect to class Science_related
-        engine3 = Knowledge_Base.Science_related.Science_Related()
+        engine3 = Science_related.Science_Related()
     elif branch_2 == 'Technology':
         # redirect to class Technology_related
-        engine3 = Knowledge_Base.Technology_related.Technology_Related()
+        engine3 = Technology_related.Technology_Related()
     elif branch_2 == 'Engineering':
         # redirect to class Engineering_related
-        engine3 = Knowledge_Base.Engineering_related.Engineering_Related()
+        engine3 = Engineering_related.Engineering_Related()
     else:
         # redirect to class Mathematics_related
-        engine3 = Knowledge_Base.Math_related.Mathematics_Related()
+        engine3 = Math_related.Mathematics_Related()
 
 
 # ----------run---------
@@ -62,10 +66,10 @@ engine1.reset()
 engine1.run()
 b1, b2 = choose_2_branches(engine1.collection())
 
-import Knowledge_Base
+# from Knowledge_Base import Science_related, Technology_related, Engineering_related, Math_related
 redirect_to_branch(b1, b2)
 
-# engine2.reset()
-# engine2.run()
-# engine3.reset()
-# engine3.run()
+engine2.reset()
+engine2.run()
+engine3.reset()
+engine3.run()
