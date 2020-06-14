@@ -1,6 +1,7 @@
 from Knowledge_Base import Common_question, Math_related, Engineering_related, Technology_related, Science_related
 from experta import watchers
 engine2, engine3 = None, None
+import time
 
 def choose_2_branches(stem_collection):
     # select 2 branch with higher weightage
@@ -60,7 +61,14 @@ def redirect_to_branch(branch_1, branch_2):
 # ----------run---------
 print("Hello! Here is a simple STEM Expert System to test which "
       "\nfield in STEM you would be interested.")
-print("\n-----------------------?WHAT's STEM?-----------------------"
+time.sleep(2.5)
+print("  _____ _______ ______ __  __ ")
+print(" / ____|__   __|  ____|  \/  |")
+print("| (___    | |  | |__  | \  / |")
+print(" \___ \   | |  |  __| | |\/| |")
+print(" ____) |  | |  | |____| |  | |")
+print("|_____/   |_|  |______|_|  |_|")
+print("\n\n-----------------------?WHAT's STEM?-----------------------"
       "\n-----------------------------------------------------------"
       "\nScience, Technology, Engineering and Mathematics (STEM), "
       "\nis a term used to group together these academic disciplines. "
@@ -68,11 +76,12 @@ print("\n-----------------------?WHAT's STEM?-----------------------"
       "\nand curriculum choices in schools to improve competitiveness "
       "\nin science and technology development.\n"
       "\n-----------------------------------------------------------")
-
+time.sleep(3.5)
 print("\nIn this test, you will first being asked some common questions "
       "\nto determine which branches among STEM you are more interested."
       "\nAfter that you will be directed to two branches of STEM."
       "\n-----------------------------------------------------------\n")
+time.sleep(2.5)
 # fired_ruled = []
 # watchers.watch('RULES')
 
@@ -81,18 +90,24 @@ engine1.reset()
 engine1.run()
 b1, b2 = choose_2_branches(engine1.collection())
 redirect_to_branch(b1, b2)
+time.sleep(1.5)
 engine2.reset()
 engine2.run()
+time.sleep(1.5)
 engine3.reset()
 engine3.run()
 m2 = engine2.show_mark()
 m3 = engine3.show_mark()
 
-if m2 > m3:
-    print(f"\nSTEM ES thinks you are more suitable in {engine2.name} field.")
-elif m2 < m3:
-    print(f"\nSTEM ES thinks you are more suitable in {engine3.name} field.")
-else:   # m2 = m3
+if m2 > m3 and m2 >= 75 and m3 >= 75:
     print(f"\nSTEM ES thinks you are more suitable in both {engine2.name} and {engine3.name} fields.")
+elif m2 > m3 and m3 < 75:
+    print(f"\nSTEM ES thinks you are more suitable in {engine2.name} field.")
+elif m3 > m2 and m2 < 75:
+    print(f"\nSTEM ES thinks you are more suitable in {engine3.name} field.")
+else:   # # m2 = m3
+    print(f"\nSTEM ES thinks you are more suitable in both {engine2.name} and {engine3.name} fields.")
+
+time.sleep(60)
 # print("\n-----------Now STEM ES is going to show you the fired ruled-----------")
 # watchers.watch('RULES')

@@ -7,7 +7,8 @@ class Mathematics_Related(KnowledgeEngine):
 
     @DefFacts()
     def initial_fact(self):
-        print("\nNow STEM ES directs you to 'Mathematics related' session. "
+        print("\n========================================================="
+              "\nNow STEM ES directs you to 'Mathematics related' session. "
               "\nPlease answer 'yes' or 'no' based on the questions given.\n")
         yield Fact(action1='Some silly info related to Mathematics field')
         yield Fact(f7='Interested in Discrete Mathematics.')

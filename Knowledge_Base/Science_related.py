@@ -7,7 +7,8 @@ class Science_Related(KnowledgeEngine):
 
     @DefFacts()
     def initial_fact(self):
-        print("\nNow STEM ES directs you to 'Science related' session. "
+        print("\n====================================================="
+              "\nNow STEM ES directs you to 'Science related' session. "
               "\nPlease answer 'yes' or 'no' based on the questions given.\n")
         yield Fact(action1='Some silly info related to Science field')
         yield Fact(f12='Interested in Philosophy.')
