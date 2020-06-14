@@ -3,11 +3,12 @@ from experta import *
 class Science_Related(KnowledgeEngine):
     science_weight = 0
     total_question = 12
+    name = 'Science'
 
     @DefFacts()
     def initial_fact(self):
-        print("\nNow STEM ES directs you to " + "\033[1m" + "Science related" + "\033[0m"
-              + " session. \nPlease answer 'yes' or 'no' based on the questions given.\n")
+        print("\nNow STEM ES directs you to 'Science related' session. "
+              "\nPlease answer 'yes' or 'no' based on the questions given.\n")
         yield Fact(action1='Some silly info related to Science field')
         yield Fact(f12='Interested in Philosophy.')
         yield Fact(f11='Interested in Political Science.')
@@ -133,12 +134,13 @@ class Science_Related(KnowledgeEngine):
             self.science_weight += 1
 
     # ---------------------------------------
-    def show_science_mark(self):
+    def show_mark(self):
         mark = int((self.science_weight/self.total_question)*100)
-        print(f"You answered {self.total_question} questions in this 'Science related' session.\n"
+        print(f"\nYou answered {self.total_question} questions in this 'Science related' session.\n"
               f"You answered 'Yes' for {self.science_weight} questions.\n"
               f"You get {mark}%\n")
         # 可以不要写you get 多少mark
+        return mark
 
 
 # t1 = Science_Related()

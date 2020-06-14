@@ -58,10 +58,23 @@ def redirect_to_branch(branch_1, branch_2):
 
 
 # ----------run---------
-print("Hello! Here is a simple Expert System to test which field in STEM you would be interested.")
-user_name = input("What is your name?\n")
-fired_ruled = []
-watchers.watch('RULES')
+print("Hello! Here is a simple STEM Expert System to test which "
+      "\nfield in STEM you would be interested.")
+print("\n-----------------------?WHAT's STEM?-----------------------"
+      "\n-----------------------------------------------------------"
+      "\nScience, Technology, Engineering and Mathematics (STEM), "
+      "\nis a term used to group together these academic disciplines. "
+      "\nSTEM is typically used when addressing education policy "
+      "\nand curriculum choices in schools to improve competitiveness "
+      "\nin science and technology development.\n"
+      "\n-----------------------------------------------------------")
+
+print("\nIn this test, you will first being asked some common questions "
+      "\nto determine which branches among STEM you are more interested."
+      "\nAfter that you will be directed to two branches of STEM."
+      "\n-----------------------------------------------------------\n")
+# fired_ruled = []
+# watchers.watch('RULES')
 
 engine1 = Common_question.Common_Criteria()
 engine1.reset()
@@ -72,6 +85,14 @@ engine2.reset()
 engine2.run()
 engine3.reset()
 engine3.run()
+m2 = engine2.show_mark()
+m3 = engine3.show_mark()
 
+if m2 > m3:
+    print(f"\nSTEM ES thinks you are more suitable in {engine2.name} field.")
+elif m2 < m3:
+    print(f"\nSTEM ES thinks you are more suitable in {engine3.name} field.")
+else:   # m2 = m3
+    print(f"\nSTEM ES thinks you are more suitable in both {engine2.name} and {engine3.name} fields.")
 # print("\n-----------Now STEM ES is going to show you the fired ruled-----------")
 # watchers.watch('RULES')

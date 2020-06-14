@@ -10,8 +10,8 @@ class Common_Criteria(KnowledgeEngine):
     @DefFacts()
     def _initial_action(self):
         print("\nHere are some common question to determine "
-              "which two branches among STEM will you be "
-              "tested later. Please answer '1' or '2' based "
+              "which \ntwo branches among STEM will you be "
+              "tested later. \nPlease answer '1' or '2' based "
               "on the question given.")
         yield Fact()
         yield Fact(cm5='Working with puzzles and problem solving '
