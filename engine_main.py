@@ -1,5 +1,5 @@
 from Knowledge_Base import Common_question, Math_related, Engineering_related, Technology_related, Science_related
-
+from experta import watchers
 engine2, engine3 = None, None
 
 def choose_2_branches(stem_collection):
@@ -60,16 +60,18 @@ def redirect_to_branch(branch_1, branch_2):
 # ----------run---------
 print("Hello! Here is a simple Expert System to test which field in STEM you would be interested.")
 user_name = input("What is your name?\n")
+fired_ruled = []
+watchers.watch('RULES')
 
 engine1 = Common_question.Common_Criteria()
 engine1.reset()
 engine1.run()
 b1, b2 = choose_2_branches(engine1.collection())
-
-# from Knowledge_Base import Science_related, Technology_related, Engineering_related, Math_related
 redirect_to_branch(b1, b2)
-
 engine2.reset()
 engine2.run()
 engine3.reset()
 engine3.run()
+
+# print("\n-----------Now STEM ES is going to show you the fired ruled-----------")
+# watchers.watch('RULES')
