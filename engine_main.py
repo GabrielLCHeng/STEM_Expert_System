@@ -99,11 +99,11 @@ engine3.run()
 m2 = engine2.show_mark()
 m3 = engine3.show_mark()
 
-if m2 > m3 and m2 >= 75 and m3 >= 75:
+if (m2 > m3 or m2 < m3) and m2 >= 75 and m3 >= 75:
     print(f"\nSTEM ES thinks you are more suitable in both {engine2.name} and {engine3.name} fields.")
-elif m2 > m3 and m3 < 75:
+elif m2 > m3:   #  and m3 < 75
     print(f"\nSTEM ES thinks you are more suitable in {engine2.name} field.")
-elif m3 > m2 and m2 < 75:
+elif m3 > m2:   # and m2 < 75
     print(f"\nSTEM ES thinks you are more suitable in {engine3.name} field.")
 else:   # # m2 = m3
     print(f"\nSTEM ES thinks you are more suitable in both {engine2.name} and {engine3.name} fields.")

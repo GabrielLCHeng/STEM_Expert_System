@@ -15,7 +15,7 @@ class Common_Criteria(KnowledgeEngine):
               "on the question given.")
         yield Fact()
         yield Fact(cm5='Working with puzzles and problem solving '
-                       'or Learning from existing knowledge resources')
+                       'or Learning from existing knowledge resources?')
         yield Fact(cm4='learn theoretical knowledge or skills?')
         yield Fact(cm3='Working with words or numbers?')
         yield Fact(cm2='Working alone or in group?')
@@ -42,6 +42,7 @@ class Common_Criteria(KnowledgeEngine):
     @Rule(Fact(cm1='Exploring theory or Solving problem?'),
           Fact(respond_common_qs1='2'))
     def common_1_ans_2(self):
+        self.weight_sci += 1
         self.weight_math += 1
         self.weight_tech += 1
         self.weight_eng += 1
@@ -87,8 +88,8 @@ class Common_Criteria(KnowledgeEngine):
     @Rule(Fact(cm3='Working with words or numbers?'),
           Fact(respond_common_qs3='1'))
     def com3_ans_1(self):
-        self.weight_tech += 1
         self.weight_sci += 1
+        self.weight_tech += 1
 
     # cm3 : number, add eng, math
     @Rule(Fact(cm3='Working with words or numbers?'),
@@ -142,7 +143,7 @@ class Common_Criteria(KnowledgeEngine):
 
     # cm5 : Learning from existing knowledge resources, add sci, tech
     @Rule(Fact(cm5='Working with puzzles and problem solving '
-                   'or Learning from existing knowledge resources'),
+                   'or Learning from existing knowledge resources?'),
           Fact(respond_common_qs5='2'))
     def com5_ans_2(self):
         self.weight_sci += 1
