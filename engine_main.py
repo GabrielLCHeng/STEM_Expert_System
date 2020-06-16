@@ -82,7 +82,7 @@ print("\nIn this test, you will first being asked some common questions "
       "\nAfter that you will be directed to two branches of STEM."
       "\n-----------------------------------------------------------\n")
 time.sleep(2.5)
-# fired_ruled = []
+# fired_rules = []
 # watchers.watch('RULES')
 
 engine1 = Common_question.Common_Criteria()
@@ -110,4 +110,4 @@ else:   # # m2 = m3
 
 time.sleep(60)
 # print("\n-----------Now STEM ES is going to show you the fired ruled-----------")
-# watchers.watch('RULES')
+# print(fired_rules)
